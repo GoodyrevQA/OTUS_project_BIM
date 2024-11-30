@@ -12,6 +12,9 @@ COPY requirements.txt .
 
 # Установка зависимостей
 RUN pip install -U pip
+RUN pip install playwright
+RUN pip install pytest-playwright
+
 RUN pip install -r requirements.txt
 RUN apk add --no-cache coreutils
 RUN playwright install
