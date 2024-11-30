@@ -31,6 +31,9 @@ def external_password(request: pytest.FixtureRequest):
 
 @pytest.fixture(autouse=True)
 def screenshot_on_failure(request, page: Page):
+    if "api" in request.node.keywords:
+        # Если это API тест, не создаем page
+        yield None
     yield
     if hasattr(request.node, "rep_call") and not request.node.rep_call.passed:
         allure.attach(page.screenshot(full_page=True), name="screenshot", attachment_type=allure.attachment_type.PNG)
@@ -38,13 +41,16 @@ def screenshot_on_failure(request, page: Page):
 
 @pytest.fixture()
 def page(context: BrowserContext, request):
-    context_with_https_ignore = context.browser.new_context(ignore_https_errors=True)
-    page: Page = context_with_https_ignore.new_page()
-    # page: Page = context.new_page()
-    page.set_viewport_size({'width': 1920, 'height': 1080})
-    yield page
-    page.close()  # Закрываем страницу после завершения теста
-    context_with_https_ignore.close()  # Закрываем контекст
+    if "api" in request.node.keywords:
+        # Если это API тест, не создаем page
+        yield None
+    else:
+        context_with_https_ignore = context.browser.new_context(ignore_https_errors=True)
+        page: Page = context_with_https_ignore.new_page()
+        page.set_viewport_size({'width': 1920, 'height': 1080})
+        yield page
+        page.close()  # Закрываем страницу после завершения теста
+        context_with_https_ignore.close()  # Закрываем контекст
 
 
 @pytest.fixture()

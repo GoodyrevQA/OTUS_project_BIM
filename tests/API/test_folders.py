@@ -20,6 +20,7 @@ warnings.filterwarnings("ignore")
 @pytest.mark.smoke
 @pytest.mark.regress
 @pytest.mark.folders
+@pytest.mark.api
 def test_get_folders(external_password):
     ''' тест проверяет GET /v2/folders '''
     get_folders(check=True, external_password=external_password)
@@ -36,6 +37,7 @@ def test_get_folders(external_password):
 @pytest.mark.smoke
 @pytest.mark.regress
 @pytest.mark.folders
+@pytest.mark.api
 def test_get_folder(external_password):
     ''' тест проверяет GET /v2/folders/{folderId}  '''
     some_folder_id = post_folders(external_password=external_password).json()
@@ -53,6 +55,7 @@ def test_get_folder(external_password):
 @pytest.mark.smoke
 @pytest.mark.regress
 @pytest.mark.folders
+@pytest.mark.api
 def test_post_folders(external_password):
     ''' тест проверяет POST /v2/folders с граничным значением длины имени '''
     string_255 = support_steps.generate_random_string(255)

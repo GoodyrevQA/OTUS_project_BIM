@@ -491,7 +491,7 @@ def post_JPG_documents(external_password, project_id=static_data.PROJECT_ID, fol
     status = False
     with allure.step("дожидаемся optimizationStatus=DONE"):
         for _ in range(attempts):
-            response_get = get_document(document_id=response.json())
+            response_get = get_document(document_id=response.json(), external_password=external_password)
             if response_get.json()['optimizationStatus'] == 'DONE':
                 status = True
                 break
