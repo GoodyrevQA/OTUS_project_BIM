@@ -12,8 +12,10 @@ import time
 import uuid
 import warnings
 
-from resources import certs, static_data
+from resources import static_data
+from resources.schemas.schema_folders import valid_folder, valid_folders
 from steps.start_session import *
+from steps.assert_steps import *
 from resources.static_data import URL_GET_ME
 
 warnings.filterwarnings("ignore")
@@ -198,28 +200,93 @@ def create_rectangle_image(only_name='output', width=512, height=256, indent=12,
 
 # endregion
 
+
+
+
+
 #################################################################
 #                       POST /v2/folders                        #
 #################################################################
 # region
 ''' функция выполняет метод POST /v2/folders, проверяет и возвращает ответ '''
-def post_folders(external_password, project_id=static_data.PROJECT_ID, folder_name=None, parent_id=None):
+def post_folders(external_password, project_id=None, folder_name=None, parent_id=None,
+                 url=urls.url_folders, method='GET /v2/folders', role='project_admin', check=True):
     ''' функция выполняет метод POST /v2/folders, проверяет и возвращает ответ '''
     start_session(pssw=external_password)
+
+    if project_id is None:
+        project_id = static_data.PROJECT_ID
+
     if folder_name is None:
         folder_name = f'folder_{generate_datetime_long()}'
-    with allure.step("подготавливаем пэйлоад POST /v2/folders для создания папки"):
+
+    with allure.step(f"подготавливаем пэйлоад {method} для создания папки"):
         json_data = {
                     "projectId": project_id,
                     "name": folder_name,
                     "parentId": parent_id
                     }
-    with allure.step("выполняем метод POST /v2/folders, проверяем статус код ответа 200"):
-        response = session.post(url=urls.url_folders, json=json_data)
-        assert response.status_code == 200, f"status code ответа метода POST /v2/folders != 200. текст ошибки: {response.text}"
+        
+    with allure.step(f"выполняем метод {method}"):
+        response = session.post(url=url, json=json_data)
+    
+    if check:
+        assert_status_code(response=response, method=method, role=role, status_code=200)
+
     return response
 
 # endregion
+
+#################################################################
+#                        GET /v2/folders                        #
+#################################################################
+# region
+''' функция выполняет метод GET /v2/folders, проверяет и возвращает ответ '''
+def get_folders(external_password, project_id=None, search_string=None, parent_id=None, apply_parent_id='true',
+                url=urls.url_folders, method='GET /v2/folders', role='project_admin', check=True):
+    ''' функция выполняет метод GET /v2/folders, проверяет и возвращает ответ '''
+    start_session(pssw=external_password)
+
+    if project_id is None:
+        project_id = static_data.PROJECT_ID
+
+    with allure.step(f"Подготавливаем квери-параметры для запроса {method}"):
+        params_data = {"projectId": project_id,
+                        "searchString": search_string,
+                        "parentId": parent_id,
+                        "applyParentId": apply_parent_id}
+        
+    with allure.step(f"выполняем метод {method}"):
+        response = session.get(url=url, params=params_data)
+
+    if check:
+        assert_status_code_and_json_schema(response=response, method=method, role=role, json_schema=valid_folders)
+
+    return response
+
+# endregion
+
+#################################################################
+#                        GET /v2/folders/id                     #
+#################################################################
+# region
+''' функция выполняет метод GET /v2/folders/{folderId} и возвращает ответ '''
+def get_folder(external_password, folder_id,
+               role='project_admin', url=urls.url_folders, method='GET /v2/folders/id', check=True):
+    ''' функция выполняет метод GET /v2/folders/{folderId} и возвращает ответ '''
+    start_session(pssw=external_password)
+
+    params_data = {"folderId": folder_id}
+
+    with allure.step(f"Выполняем {method}"):
+        response = session.get(url=f'{url}/{folder_id}', params=params_data)
+    
+    if check:
+        assert_status_code_and_json_schema(response=response, method=method, role=role, json_schema=valid_folder)
+
+    return response
+
+
 
 #################################################################
 #                     POST /v2/access-folders                   #
@@ -251,9 +318,9 @@ def post_access_folders(user_ids: list =[static_data.user_id], access_level='ADM
 #################################################################
 # region
 ''' функция проверяет метод GET /v2/documents/{documentId} и возвращает response '''
-def get_document(document_id):
+def get_document(document_id, external_password):
     ''' функция проверяет метод GET /v2/documents/{documentId} и возвращает response '''
-    start_session()
+    start_session(pssw=external_password)
     with allure.step("выполняем метод GET GET /v2/documents/documentId, проверяем статус код ответа и соответствие ответа json-схеме"):
         response = session.get(url=f'{urls.url_documents}/{document_id}')
         assert response.status_code == 200, f"status code ответа метода GET /v2/documents/documentId != 200. текст ошибки: {response.text}"
@@ -399,7 +466,7 @@ def post_JPG_documents(external_password, project_id=static_data.PROJECT_ID, fol
     start_session(pssw=external_password)
     if folder_id is None:
         with allure.step("создаем папку для загрузки, получаем ее id"):
-            folder_id = post_folders().json()
+            folder_id = post_folders(external_password=external_password).json()
 
     if only_name is None:
         only_name = f'file_{generate_datetime_for_file_name_long()}'
@@ -496,7 +563,7 @@ customAttributes=None, role='project_admin', url=urls.url_issues, method='POST /
                     "description": description,
                     "customAttributes": customAttributes}
 
-    response = SESSIONS[role].post(url=url, json=json_data)
+    response = session.post(url=url, json=json_data)
     assert response.status_code == 200, f"статус код ответа метода {method} != 200. текст ошибки: {response.text}"
 
 # endregion

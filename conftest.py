@@ -20,7 +20,7 @@ from pages.viewer_page import ViewerPage
 def pytest_addoption(parser: pytest.Parser):
     parser.addoption("--external-password",
                      action="store",
-                     default="random_password",
+                     default="project_OTUS2024",
                      help="Password for authentication external_user")
 
 

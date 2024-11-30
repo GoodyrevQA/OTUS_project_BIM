@@ -6,7 +6,6 @@ import logging
 
 from resources.static_data import BASE_URL
 from steps.support_steps import get_cookies
-from resources import certs
 
 
 class BasePage:
@@ -19,8 +18,8 @@ class BasePage:
     def __init__(self, page: Page):
         self.page = page
         self.page.context.clear_cookies()
-        cookies = get_cookies(cert=certs.ROLES['project_admin'])
-        self.page.context.add_cookies(cookies=cookies)
+        # cookies = get_cookies(pssw)
+        # self.page.context.add_cookies(cookies=cookies)
 
 
     @allure.step('Add cookies')
