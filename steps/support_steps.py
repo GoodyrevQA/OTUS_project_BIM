@@ -1,6 +1,5 @@
 from PIL import Image, ImageDraw, ImageFont
 from reportlab.pdfgen import canvas
-# from reportlab.lib.pagesizes import letter
 import allure
 import requests
 
@@ -204,9 +203,9 @@ def create_rectangle_image(only_name='output', width=512, height=256, indent=12,
 #################################################################
 # region
 ''' функция выполняет метод POST /v2/folders, проверяет и возвращает ответ '''
-def post_folders(project_id=static_data.PROJECT_ID, folder_name=None, parent_id=None):
+def post_folders(external_password, project_id=static_data.PROJECT_ID, folder_name=None, parent_id=None):
     ''' функция выполняет метод POST /v2/folders, проверяет и возвращает ответ '''
-    start_session()
+    start_session(pssw=external_password)
     if folder_name is None:
         folder_name = f'folder_{generate_datetime_long()}'
     with allure.step("подготавливаем пэйлоад POST /v2/folders для создания папки"):
@@ -394,10 +393,10 @@ def post_PDF_documents(project_id=static_data.PROJECT_ID, folder_id=None, num_pa
 #################################################################
 # region
 ''' функция возвращает response метода POST /v2/documents '''
-def post_JPG_documents(project_id=static_data.PROJECT_ID, folder_id=None, only_name=None,
+def post_JPG_documents(external_password, project_id=static_data.PROJECT_ID, folder_id=None, only_name=None,
                        width=512, height=256, indent=12, attempts=60, canvas_color=None):
     ''' функция возвращает response метода POST /v2/documents '''
-    start_session()
+    start_session(pssw=external_password)
     if folder_id is None:
         with allure.step("создаем папку для загрузки, получаем ее id"):
             folder_id = post_folders().json()

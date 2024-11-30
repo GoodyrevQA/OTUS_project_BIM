@@ -12,13 +12,13 @@ from steps.support_steps import post_folders, post_JPG_documents
 @allure.feature("Add_comment")
 @allure.epic("Actions_with_viewer")
 @pytest.mark.viewer
-def test_add_comment(viewer_page: ViewerPage):
+def test_add_comment(external_password, viewer_page: ViewerPage):
     '''тест проверяет добавление комментария к документу'''
     with allure.step('создаем папку'):
-        folder_id = post_folders(project_id=static_data.PROJECT_ID).json()
+        folder_id = post_folders(project_id=static_data.PROJECT_ID, external_password=external_password).json()
 
     with allure.step('загружаем в папку документ JPG'):
-        doc_id = post_JPG_documents(folder_id=folder_id).json()
+        doc_id = post_JPG_documents(folder_id=folder_id, external_password=external_password).json()
 
     viewer_page.change_role_to_('project_admin')
     viewer_page.go_to_the_page(f'{BASE_URL}/accounts/{ACCOUNT_ID}/projects/{PROJECT_ID}/documentation?folderId={folder_id}&viewerId={doc_id}')
@@ -30,13 +30,13 @@ def test_add_comment(viewer_page: ViewerPage):
 @allure.feature("Change_scale")
 @allure.epic("Actions_with_viewer")
 @pytest.mark.viewer
-def test_reduce_and_increace_scale(viewer_page: ViewerPage):
+def test_reduce_and_increace_scale(external_password, viewer_page: ViewerPage):
     '''тест проверяет изменение масштаба документа'''
     with allure.step('создаем папку'):
-        folder_id = post_folders(project_id=static_data.PROJECT_ID).json()
+        folder_id = post_folders(project_id=static_data.PROJECT_ID, external_password=external_password).json()
 
     with allure.step('загружаем в папку документ JPG'):
-        doc_id = post_JPG_documents(folder_id=folder_id).json()
+        doc_id = post_JPG_documents(folder_id=folder_id, external_password=external_password).json()
 
     viewer_page.change_role_to_('project_admin')
     viewer_page.go_to_the_page(f'{BASE_URL}/accounts/{ACCOUNT_ID}/projects/{PROJECT_ID}/documentation?folderId={folder_id}&viewerId={doc_id}')
@@ -60,13 +60,13 @@ def test_reduce_and_increace_scale(viewer_page: ViewerPage):
 @allure.feature("Change_scale")
 @allure.epic("Actions_with_viewer")
 @pytest.mark.viewer
-def test_button_by_page_size(viewer_page: ViewerPage):
+def test_button_by_page_size(external_password, viewer_page: ViewerPage):
     '''тест проверяет изменение масштаба документа'''
     with allure.step('создаем папку'):
-        folder_id = post_folders(project_id=static_data.PROJECT_ID).json()
+        folder_id = post_folders(project_id=static_data.PROJECT_ID, external_password=external_password).json()
 
     with allure.step('загружаем в папку документ JPG'):
-        doc_id = post_JPG_documents(folder_id=folder_id).json()
+        doc_id = post_JPG_documents(folder_id=folder_id, external_password=external_password).json()
 
     viewer_page.change_role_to_('project_admin')
     viewer_page.go_to_the_page(f'{BASE_URL}/accounts/{ACCOUNT_ID}/projects/{PROJECT_ID}/documentation?folderId={folder_id}&viewerId={doc_id}')
@@ -88,13 +88,13 @@ def test_button_by_page_size(viewer_page: ViewerPage):
 @allure.feature("Rotate_image")
 @allure.epic("Actions_with_viewer")
 @pytest.mark.viewer
-def test_rotate_image(viewer_page: ViewerPage):
+def test_rotate_image(external_password, viewer_page: ViewerPage):
     '''тест проверяет поворот документа'''
     with allure.step('создаем папку'):
-        folder_id = post_folders(project_id=static_data.PROJECT_ID).json()
+        folder_id = post_folders(project_id=static_data.PROJECT_ID, external_password=external_password).json()
 
     with allure.step('загружаем в папку документ JPG'):
-        doc_id = post_JPG_documents(folder_id=folder_id).json()
+        doc_id = post_JPG_documents(folder_id=folder_id, external_password=external_password).json()
 
     viewer_page.change_role_to_('project_admin')
     viewer_page.go_to_the_page(f'{BASE_URL}/accounts/{ACCOUNT_ID}/projects/{PROJECT_ID}/documentation?folderId={folder_id}&viewerId={doc_id}')
