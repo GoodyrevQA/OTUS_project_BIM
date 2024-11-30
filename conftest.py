@@ -9,7 +9,6 @@ from pages.documentation_page import DocumentationPage
 from pages.header_page import HeaderPage
 from pages.issues_page import IssuesPage
 from pages.members_page import MembersPage
-from pages.midp_page import MidpPage
 from pages.projects_page import ProjectsPage
 from pages.registry_page import RegistryPage
 from pages.settings_page import SettingsPage
@@ -75,10 +74,6 @@ def issues_page(page: Page) -> IssuesPage:
 @pytest.fixture()
 def members_page(page: Page) -> MembersPage:
     return MembersPage(page)
-
-@pytest.fixture()
-def midp_page(page: Page) -> MidpPage:
-    return MidpPage(page)
 
 @pytest.fixture()
 def projects_page(page: Page) -> ProjectsPage:

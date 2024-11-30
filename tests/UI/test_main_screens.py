@@ -6,7 +6,6 @@ from pages.documentation_page import DocumentationPage
 from pages.header_page import HeaderPage
 from pages.issues_page import IssuesPage
 from pages.members_page import MembersPage
-from pages.midp_page import MidpPage
 from pages.registry_page import RegistryPage
 from pages.settings_page import SettingsPage
 from resources.static_data import BASE_URL, ACCOUNT_ID, PROJECT_ID
