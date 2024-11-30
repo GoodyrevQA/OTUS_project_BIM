@@ -16,7 +16,7 @@ RUN pip install playwright
 RUN pip install pytest-playwright
 
 RUN pip install -r requirements.txt
-RUN apk add --no-cache coreutils
+# RUN apk add --no-cache coreutils
 RUN playwright install
 
 # Копирование остальных файлов проекта
