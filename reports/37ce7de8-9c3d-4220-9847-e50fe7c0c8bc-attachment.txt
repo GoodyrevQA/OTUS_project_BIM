@@ -1,0 +1,19 @@
+17:12:31.962--[35mDEBUG[0m--SettingsPage--Changing role to: external_project_admin
+
+17:12:31.973--[35mDEBUG[0m--SettingsPage--Clearing cookies
+
+17:12:32.337--[35mDEBUG[0m--SettingsPage--Adding cookies
+
+17:12:32.363--[35mDEBUG[0m--SettingsPage--Going to the page: https://cde-ift.stroika.tech/accounts/cc4a60c5-eec9-47cb-a26e-5fee2095f7de/projects/75d1f7f8-6af5-47d3-be1e-283c1242cdb0/settings
+
+17:12:32.842--[35mDEBUG[0m--SettingsPage--Checking part of URL: https://cde-ift.stroika.tech/accounts/cc4a60c5-eec9-47cb-a26e-5fee2095f7de/projects/75d1f7f8-6af5-47d3-be1e-283c1242cdb0/settings
+
+17:12:32.967--[35mDEBUG[0m--SettingsPage--Checking element is visible: <Locator frame=<Frame name= url='https://cde-ift.stroika.tech/accounts/cc4a60c5-eec9-47cb-a26e-5fee2095f7de/projects/75d1f7f8-6af5-47d3-be1e-283c1242cdb0/settings'> selector='internal:role=link[name="Маршрутизация"i]'>
+
+17:12:40.203--[35mDEBUG[0m--SettingsPage--Checking element is visible: <Locator frame=<Frame name= url='https://cde-ift.stroika.tech/accounts/cc4a60c5-eec9-47cb-a26e-5fee2095f7de/projects/75d1f7f8-6af5-47d3-be1e-283c1242cdb0/settings/routing/stages'> selector='internal:role=link[name="Замечания"i]'>
+
+17:12:40.290--[35mDEBUG[0m--SettingsPage--Checking element is visible: <Locator frame=<Frame name= url='https://cde-ift.stroika.tech/accounts/cc4a60c5-eec9-47cb-a26e-5fee2095f7de/projects/75d1f7f8-6af5-47d3-be1e-283c1242cdb0/settings/routing/stages'> selector='internal:role=link[name="Расположения"i]'>
+
+17:12:40.337--[35mDEBUG[0m--SettingsPage--Checking element is visible: <Locator frame=<Frame name= url='https://cde-ift.stroika.tech/accounts/cc4a60c5-eec9-47cb-a26e-5fee2095f7de/projects/75d1f7f8-6af5-47d3-be1e-283c1242cdb0/settings/routing/stages'> selector='internal:role=link[name="Расширенный доступ"i]'>
+
+17:12:40.396--[35mDEBUG[0m--SettingsPage--Checking element is visible: <Locator frame=<Frame name= url='https://cde-ift.stroika.tech/accounts/cc4a60c5-eec9-47cb-a26e-5fee2095f7de/projects/75d1f7f8-6af5-47d3-be1e-283c1242cdb0/settings/routing/stages'> selector='internal:role=link[name="MIDP"s]'>

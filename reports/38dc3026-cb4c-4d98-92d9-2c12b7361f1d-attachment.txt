@@ -1,0 +1,3 @@
+17:08:04.319--DEBUG--IssuesPage--Changing role to: external_project_admin
+
+17:08:04.320--DEBUG--IssuesPage--Clearing cookies

@@ -1,0 +1,61 @@
+17:11:05.163--[35mDEBUG[0m--IssuesPage--Changing role to: external_project_admin
+
+17:11:05.164--[35mDEBUG[0m--IssuesPage--Clearing cookies
+
+17:11:05.225--[35mDEBUG[0m--IssuesPage--Adding cookies
+
+17:11:05.243--[35mDEBUG[0m--IssuesPage--Going to the page: https://cde-ift.stroika.tech/accounts/cc4a60c5-eec9-47cb-a26e-5fee2095f7de/projects/75d1f7f8-6af5-47d3-be1e-283c1242cdb0/issues
+
+17:11:07.493--[35mDEBUG[0m--IssuesPage--Checking part of URL: https://cde-ift.stroika.tech/accounts/cc4a60c5-eec9-47cb-a26e-5fee2095f7de/projects/75d1f7f8-6af5-47d3-be1e-283c1242cdb0/issues
+
+17:11:07.697--[35mDEBUG[0m--IssuesPage--Checking element is visible: <Locator frame=<Frame name= url='https://cde-ift.stroika.tech/accounts/cc4a60c5-eec9-47cb-a26e-5fee2095f7de/projects/75d1f7f8-6af5-47d3-be1e-283c1242cdb0/issues'> selector="//*[@data-testid='icon__setting_slider']">
+
+17:11:10.840--[35mDEBUG[0m--IssuesPage--Checking element is visible: <Locator frame=<Frame name= url='https://cde-ift.stroika.tech/accounts/cc4a60c5-eec9-47cb-a26e-5fee2095f7de/projects/75d1f7f8-6af5-47d3-be1e-283c1242cdb0/issues?projectId=&categoryIds[]&typeIds[]&statuses[]&locationIds[]&createdByIds[]&userAssignedToIds[]&customAttributes[]&limit=30&offset=0'> selector="//div[@title='Все']">
+
+17:11:11.294--[35mDEBUG[0m--IssuesPage--Checking element is visible: <Locator frame=<Frame name= url='https://cde-ift.stroika.tech/accounts/cc4a60c5-eec9-47cb-a26e-5fee2095f7de/projects/75d1f7f8-6af5-47d3-be1e-283c1242cdb0/issues?projectId=&categoryIds[]&typeIds[]&statuses[]&locationIds[]&createdByIds[]&userAssignedToIds[]&customAttributes[]&limit=30&offset=0'> selector="//div[@title='Только мои']">
+
+17:11:11.448--[35mDEBUG[0m--IssuesPage--Checking element is visible: <Locator frame=<Frame name= url='https://cde-ift.stroika.tech/accounts/cc4a60c5-eec9-47cb-a26e-5fee2095f7de/projects/75d1f7f8-6af5-47d3-be1e-283c1242cdb0/issues?projectId=&categoryIds[]&typeIds[]&statuses[]&locationIds[]&createdByIds[]&userAssignedToIds[]&customAttributes[]&limit=30&offset=0'> selector="//div[@title='Назначены мне']">
+
+17:11:11.508--[35mDEBUG[0m--IssuesPage--Checking element is visible: <Locator frame=<Frame name= url='https://cde-ift.stroika.tech/accounts/cc4a60c5-eec9-47cb-a26e-5fee2095f7de/projects/75d1f7f8-6af5-47d3-be1e-283c1242cdb0/issues?projectId=&categoryIds[]&typeIds[]&statuses[]&locationIds[]&createdByIds[]&userAssignedToIds[]&customAttributes[]&limit=30&offset=0'> selector='internal:attr=[placeholder="Введите название замечания или пользователя"i]'>
+
+17:11:11.537--[35mDEBUG[0m--IssuesPage--Checking element is visible: <Locator frame=<Frame name= url='https://cde-ift.stroika.tech/accounts/cc4a60c5-eec9-47cb-a26e-5fee2095f7de/projects/75d1f7f8-6af5-47d3-be1e-283c1242cdb0/issues?projectId=&categoryIds[]&typeIds[]&statuses[]&locationIds[]&createdByIds[]&userAssignedToIds[]&customAttributes[]&limit=30&offset=0'> selector="//*[@data-testid='SearchOutline']">
+
+17:11:11.554--[35mDEBUG[0m--IssuesPage--Checking element is visible: <Locator frame=<Frame name= url='https://cde-ift.stroika.tech/accounts/cc4a60c5-eec9-47cb-a26e-5fee2095f7de/projects/75d1f7f8-6af5-47d3-be1e-283c1242cdb0/issues?projectId=&categoryIds[]&typeIds[]&statuses[]&locationIds[]&createdByIds[]&userAssignedToIds[]&customAttributes[]&limit=30&offset=0'> selector="//*[@data-testid='ExportOutline']">
+
+17:11:11.586--[35mDEBUG[0m--IssuesPage--Checking element is visible: <Locator frame=<Frame name= url='https://cde-ift.stroika.tech/accounts/cc4a60c5-eec9-47cb-a26e-5fee2095f7de/projects/75d1f7f8-6af5-47d3-be1e-283c1242cdb0/issues?projectId=&categoryIds[]&typeIds[]&statuses[]&locationIds[]&createdByIds[]&userAssignedToIds[]&customAttributes[]&limit=30&offset=0'> selector="//span[text()='ID']">
+
+17:11:11.620--[35mDEBUG[0m--IssuesPage--Checking element is visible: <Locator frame=<Frame name= url='https://cde-ift.stroika.tech/accounts/cc4a60c5-eec9-47cb-a26e-5fee2095f7de/projects/75d1f7f8-6af5-47d3-be1e-283c1242cdb0/issues?projectId=&categoryIds[]&typeIds[]&statuses[]&locationIds[]&createdByIds[]&userAssignedToIds[]&customAttributes[]&limit=30&offset=0'> selector="//span[text()='Категория']">
+
+17:11:11.670--[35mDEBUG[0m--IssuesPage--Checking element is visible: <Locator frame=<Frame name= url='https://cde-ift.stroika.tech/accounts/cc4a60c5-eec9-47cb-a26e-5fee2095f7de/projects/75d1f7f8-6af5-47d3-be1e-283c1242cdb0/issues?projectId=&categoryIds[]&typeIds[]&statuses[]&locationIds[]&createdByIds[]&userAssignedToIds[]&customAttributes[]&limit=30&offset=0'> selector="//span[text()='Тип']">
+
+17:11:11.711--[35mDEBUG[0m--IssuesPage--Checking element is visible: <Locator frame=<Frame name= url='https://cde-ift.stroika.tech/accounts/cc4a60c5-eec9-47cb-a26e-5fee2095f7de/projects/75d1f7f8-6af5-47d3-be1e-283c1242cdb0/issues?projectId=&categoryIds[]&typeIds[]&statuses[]&locationIds[]&createdByIds[]&userAssignedToIds[]&customAttributes[]&limit=30&offset=0'> selector="//span[text()='Название']">
+
+17:11:11.735--[35mDEBUG[0m--IssuesPage--Checking element is visible: <Locator frame=<Frame name= url='https://cde-ift.stroika.tech/accounts/cc4a60c5-eec9-47cb-a26e-5fee2095f7de/projects/75d1f7f8-6af5-47d3-be1e-283c1242cdb0/issues?projectId=&categoryIds[]&typeIds[]&statuses[]&locationIds[]&createdByIds[]&userAssignedToIds[]&customAttributes[]&limit=30&offset=0'> selector="//span[text()='Кому']">
+
+17:11:11.766--[35mDEBUG[0m--IssuesPage--Checking element is visible: <Locator frame=<Frame name= url='https://cde-ift.stroika.tech/accounts/cc4a60c5-eec9-47cb-a26e-5fee2095f7de/projects/75d1f7f8-6af5-47d3-be1e-283c1242cdb0/issues?projectId=&categoryIds[]&typeIds[]&statuses[]&locationIds[]&createdByIds[]&userAssignedToIds[]&customAttributes[]&limit=30&offset=0'> selector="//span[text()='От кого']">
+
+17:11:11.797--[35mDEBUG[0m--IssuesPage--Checking element is visible: <Locator frame=<Frame name= url='https://cde-ift.stroika.tech/accounts/cc4a60c5-eec9-47cb-a26e-5fee2095f7de/projects/75d1f7f8-6af5-47d3-be1e-283c1242cdb0/issues?projectId=&categoryIds[]&typeIds[]&statuses[]&locationIds[]&createdByIds[]&userAssignedToIds[]&customAttributes[]&limit=30&offset=0'> selector="//span[text()='Дата устранения']">
+
+17:11:11.814--[35mDEBUG[0m--IssuesPage--Checking element is visible: <Locator frame=<Frame name= url='https://cde-ift.stroika.tech/accounts/cc4a60c5-eec9-47cb-a26e-5fee2095f7de/projects/75d1f7f8-6af5-47d3-be1e-283c1242cdb0/issues?projectId=&categoryIds[]&typeIds[]&statuses[]&locationIds[]&createdByIds[]&userAssignedToIds[]&customAttributes[]&limit=30&offset=0'> selector="//span[text()='Дата создания']">
+
+17:11:11.845--[35mDEBUG[0m--IssuesPage--Checking element is visible: <Locator frame=<Frame name= url='https://cde-ift.stroika.tech/accounts/cc4a60c5-eec9-47cb-a26e-5fee2095f7de/projects/75d1f7f8-6af5-47d3-be1e-283c1242cdb0/issues?projectId=&categoryIds[]&typeIds[]&statuses[]&locationIds[]&createdByIds[]&userAssignedToIds[]&customAttributes[]&limit=30&offset=0'> selector="//span[text()='Дата изменения']">
+
+17:11:11.877--[35mDEBUG[0m--IssuesPage--Checking element is visible: <Locator frame=<Frame name= url='https://cde-ift.stroika.tech/accounts/cc4a60c5-eec9-47cb-a26e-5fee2095f7de/projects/75d1f7f8-6af5-47d3-be1e-283c1242cdb0/issues?projectId=&categoryIds[]&typeIds[]&statuses[]&locationIds[]&createdByIds[]&userAssignedToIds[]&customAttributes[]&limit=30&offset=0'> selector="//span[text()='Кем изменено']">
+
+17:11:11.908--[35mDEBUG[0m--HeaderPage--Checking element is visible: <Locator frame=<Frame name= url='https://cde-ift.stroika.tech/accounts/cc4a60c5-eec9-47cb-a26e-5fee2095f7de/projects/75d1f7f8-6af5-47d3-be1e-283c1242cdb0/issues?projectId=&categoryIds[]&typeIds[]&statuses[]&locationIds[]&createdByIds[]&userAssignedToIds[]&customAttributes[]&limit=30&offset=0'> selector='internal:role=banner >> internal:testid=[data-testid="BellOutline"s]'>
+
+17:11:11.939--[35mDEBUG[0m--HeaderPage--Checking element is visible: <Locator frame=<Frame name= url='https://cde-ift.stroika.tech/accounts/cc4a60c5-eec9-47cb-a26e-5fee2095f7de/projects/75d1f7f8-6af5-47d3-be1e-283c1242cdb0/issues?projectId=&categoryIds[]&typeIds[]&statuses[]&locationIds[]&createdByIds[]&userAssignedToIds[]&customAttributes[]&limit=30&offset=0'> selector="//*[@data-testid='NotificationQuestionOutline']">
+
+17:11:11.971--[35mDEBUG[0m--HeaderPage--Checking element is visible: <Locator frame=<Frame name= url='https://cde-ift.stroika.tech/accounts/cc4a60c5-eec9-47cb-a26e-5fee2095f7de/projects/75d1f7f8-6af5-47d3-be1e-283c1242cdb0/issues?projectId=&categoryIds[]&typeIds[]&statuses[]&locationIds[]&createdByIds[]&userAssignedToIds[]&customAttributes[]&limit=30&offset=0'> selector='internal:role=img[name="Main Logo"i]'>
+
+17:11:12.002--[35mDEBUG[0m--HeaderPage--Checking element is visible: <Locator frame=<Frame name= url='https://cde-ift.stroika.tech/accounts/cc4a60c5-eec9-47cb-a26e-5fee2095f7de/projects/75d1f7f8-6af5-47d3-be1e-283c1242cdb0/issues?projectId=&categoryIds[]&typeIds[]&statuses[]&locationIds[]&createdByIds[]&userAssignedToIds[]&customAttributes[]&limit=30&offset=0'> selector='internal:role=tab[name="Документация"i]'>
+
+17:11:12.052--[35mDEBUG[0m--HeaderPage--Checking element is visible: <Locator frame=<Frame name= url='https://cde-ift.stroika.tech/accounts/cc4a60c5-eec9-47cb-a26e-5fee2095f7de/projects/75d1f7f8-6af5-47d3-be1e-283c1242cdb0/issues?projectId=&categoryIds[]&typeIds[]&statuses[]&locationIds[]&createdByIds[]&userAssignedToIds[]&customAttributes[]&limit=30&offset=0'> selector='internal:role=tab[name="Замечания"i]'>
+
+17:11:12.084--[35mDEBUG[0m--HeaderPage--Checking element is visible: <Locator frame=<Frame name= url='https://cde-ift.stroika.tech/accounts/cc4a60c5-eec9-47cb-a26e-5fee2095f7de/projects/75d1f7f8-6af5-47d3-be1e-283c1242cdb0/issues?projectId=&categoryIds[]&typeIds[]&statuses[]&locationIds[]&createdByIds[]&userAssignedToIds[]&customAttributes[]&limit=30&offset=0'> selector='internal:role=tab[name="Согласования"s]'>
+
+17:11:12.116--[35mDEBUG[0m--HeaderPage--Checking element is visible: <Locator frame=<Frame name= url='https://cde-ift.stroika.tech/accounts/cc4a60c5-eec9-47cb-a26e-5fee2095f7de/projects/75d1f7f8-6af5-47d3-be1e-283c1242cdb0/issues?projectId=&categoryIds[]&typeIds[]&statuses[]&locationIds[]&createdByIds[]&userAssignedToIds[]&customAttributes[]&limit=30&offset=0'> selector='internal:role=tab[name="Настройки"i]'>
+
+17:11:12.147--[35mDEBUG[0m--HeaderPage--Checking element is visible: <Locator frame=<Frame name= url='https://cde-ift.stroika.tech/accounts/cc4a60c5-eec9-47cb-a26e-5fee2095f7de/projects/75d1f7f8-6af5-47d3-be1e-283c1242cdb0/issues?projectId=&categoryIds[]&typeIds[]&statuses[]&locationIds[]&createdByIds[]&userAssignedToIds[]&customAttributes[]&limit=30&offset=0'> selector='internal:role=tab[name="Реестр документов"i]'>
+
+17:11:12.178--[35mDEBUG[0m--HeaderPage--Checking element is visible: <Locator frame=<Frame name= url='https://cde-ift.stroika.tech/accounts/cc4a60c5-eec9-47cb-a26e-5fee2095f7de/projects/75d1f7f8-6af5-47d3-be1e-283c1242cdb0/issues?projectId=&categoryIds[]&typeIds[]&statuses[]&locationIds[]&createdByIds[]&userAssignedToIds[]&customAttributes[]&limit=30&offset=0'> selector='internal:role=tab[name="Участники"i]'>

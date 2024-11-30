@@ -1,0 +1,10 @@
+allure-pytest==2.13.2
+openpyxl==3.1.5
+pytest==7.4.3
+pytest-rerunfailures==13.0
+pytest-voluptuous==1.2.0
+pytest-xdist==3.6.1
+reportlab==4.2.2
+requests==2.31.0
+voluptuous==0.14.1
+pytest-playwright==0.4.4
