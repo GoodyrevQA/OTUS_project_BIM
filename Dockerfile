@@ -1,41 +1,45 @@
-# Устанавка базового образ
-FROM python:3.9-slim
+# Используйте официальный Python образ в качестве базового
+FROM python:3.11-slim
 
-# Устанавка рабочего директория внутри контейнера
-# Директорий будет создан если его не было
-# Будет в дальнейшем использоваться как базовый
+# Установите переменные окружения
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
+
+# Установите системные зависимости
+RUN apt-get update && apt-get install -y \
+    curl \
+    gcc \
+    libffi-dev \
+    libssl-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+# Установите зависимости для Playwright
+RUN apt-get update && apt-get install -y \
+    libnss3 \
+    libatk1.0-0 \
+    libatk-bridge2.0-0 \
+    libcups2 \
+    libdrm2 \
+    libxrandr2 \
+    libgtk-3-0 \
+    libgbm1 \
+    && rm -rf /var/lib/apt/lists/*
+
+# Установите рабочую директорию
 WORKDIR /app
 
-# Копирование зависимостей
-# Для того чтобы не пересобирать их каждый раз при сборке образа
+# Скопируйте файл зависимостей
 COPY requirements.txt .
 
-
-RUN apt-get update && apt-get install -y \
-    wget \
-    curl \
-    gnupg \
-    libnss3 \
-    libxss1 \
-    libasound2 \
-    libatk-bridge2.0-0 \
-    libgtk-3-0 \
-    libgbm-dev \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
-    
-# Установка зависимостей
-RUN pip install -U pip
-RUN pip install playwright
-RUN pip install pytest-playwright
-
+# Обновите pip и установите зависимости Python
+RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
-# RUN apk add --no-cache coreutils
-RUN playwright install
 
-# Копирование остальных файлов проекта
+# Установите браузеры Playwright
+RUN playwright install --with-deps
+
+# Скопируйте остальной код приложения
 COPY . .
 
-
-# Запуск 
+# # Установите команду по умолчанию для запуска тестов
 # CMD ["pytest"]
