@@ -36,7 +36,7 @@ RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
 # Установите браузеры Playwright
-RUN playwright install-deps
+RUN playwright install --with-deps
 
 # Скопируйте остальной код приложения
 COPY . .
