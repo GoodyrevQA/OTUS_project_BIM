@@ -10,6 +10,20 @@ WORKDIR /app
 # Для того чтобы не пересобирать их каждый раз при сборке образа
 COPY requirements.txt .
 
+
+RUN apt-get update && apt-get install -y \
+    wget \
+    curl \
+    gnupg \
+    libnss3 \
+    libxss1 \
+    libasound2 \
+    libatk-bridge2.0-0 \
+    libgtk-3-0 \
+    libgbm-dev \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+    
 # Установка зависимостей
 RUN pip install -U pip
 RUN pip install playwright
