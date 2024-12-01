@@ -16,7 +16,7 @@ class ApprovalsPage(BasePage):
         self.button_active: Locator = page.get_by_role("button", name="Активные")
         self.button_archived: Locator = page.get_by_role("button", name="Архивные")
         self.button_assigned_to_me: Locator = page.get_by_role("button", name="Назначенные мне")
-        self.button_all: Locator = page.get_by_role("button", name="Все")
+        self.button_all: Locator = page.locator("//div[@role='button' and text()='Все']")
         self.field_search: Locator = page.get_by_placeholder("Название файла, маршрут или этап согласования, согласующие")
         self.icon_search: Locator = page.locator("//*[@data-testid='SearchOutline']")
 
