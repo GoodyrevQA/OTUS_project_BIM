@@ -12,6 +12,7 @@ from steps.support_steps import post_folders, post_JPG_documents
 @allure.feature("Add_comment")
 @allure.epic("Actions_with_viewer")
 @pytest.mark.viewer
+@pytest.mark.ui
 def test_add_comment(external_password, viewer_page: ViewerPage):
     '''тест проверяет добавление комментария к документу'''
     with allure.step('создаем папку'):
@@ -30,6 +31,7 @@ def test_add_comment(external_password, viewer_page: ViewerPage):
 @allure.feature("Change_scale")
 @allure.epic("Actions_with_viewer")
 @pytest.mark.viewer
+@pytest.mark.ui
 def test_reduce_and_increace_scale(external_password, viewer_page: ViewerPage):
     '''тест проверяет изменение масштаба документа'''
     with allure.step('создаем папку'):
@@ -60,6 +62,7 @@ def test_reduce_and_increace_scale(external_password, viewer_page: ViewerPage):
 @allure.feature("Change_scale")
 @allure.epic("Actions_with_viewer")
 @pytest.mark.viewer
+@pytest.mark.ui
 def test_button_by_page_size(external_password, viewer_page: ViewerPage):
     '''тест проверяет изменение масштаба документа'''
     with allure.step('создаем папку'):
@@ -80,7 +83,7 @@ def test_button_by_page_size(external_password, viewer_page: ViewerPage):
     assert new_scale > default_scale
 
     viewer_page.click_button_by_page_size()
-    viewer_page.page.wait_for_timeout(1000)
+    viewer_page.page.wait_for_timeout(2000)
     new_scale = int(viewer_page.scale_percents.text_content().strip('%'))
     assert new_scale == default_scale
 
@@ -88,6 +91,7 @@ def test_button_by_page_size(external_password, viewer_page: ViewerPage):
 @allure.feature("Rotate_image")
 @allure.epic("Actions_with_viewer")
 @pytest.mark.viewer
+@pytest.mark.ui
 def test_rotate_image(external_password, viewer_page: ViewerPage):
     '''тест проверяет поворот документа'''
     with allure.step('создаем папку'):

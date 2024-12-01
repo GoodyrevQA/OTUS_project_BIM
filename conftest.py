@@ -16,11 +16,34 @@ from pages.stub_page import StubPage
 from pages.viewer_page import ViewerPage
 
 
+# для корректного отображения кириллицы в параметризаторах
+def pytest_make_parametrize_id(val):
+    return repr(val)
+
+
+@pytest.fixture(autouse=True)
+def screenshot_on_failure(request):
+    # Проверяем, помечен ли тест как 'ui'
+    if 'ui' not in request.keywords:
+        yield
+        return
+
+    # Получаем фикстуру 'page' только для UI тестов
+    page = request.getfixturevalue("page")
+    yield
+    # Проверяем, упал ли тест
+    if hasattr(request.node, "rep_call") and not request.node.rep_call.passed:
+        allure.attach(
+            page.screenshot(full_page=True),
+            name="screenshot",
+            attachment_type=allure.attachment_type.PNG
+        )
+
 
 def pytest_addoption(parser: pytest.Parser):
     parser.addoption("--external-password",
                      action="store",
-                     default="project_OTUS2024",
+                     default="random_password",
                      help="Password for authentication external_user")
 
 
@@ -29,28 +52,17 @@ def external_password(request: pytest.FixtureRequest):
     return request.config.getoption("--external-password")
 
 
-@pytest.fixture(autouse=True)
-def screenshot_on_failure(request, page: Page):
-    if "api" in request.node.keywords:
-        # Если это API тест, не создаем page
-        yield None
-    yield
-    if hasattr(request.node, "rep_call") and not request.node.rep_call.passed:
-        allure.attach(page.screenshot(full_page=True), name="screenshot", attachment_type=allure.attachment_type.PNG)
-
-
 @pytest.fixture()
 def page(context: BrowserContext, request):
-    if "api" in request.node.keywords:
-        # Если это API тест, не создаем page
-        yield None
-    else:
+    if "ui" in request.keywords:
         context_with_https_ignore = context.browser.new_context(ignore_https_errors=True)
         page: Page = context_with_https_ignore.new_page()
         page.set_viewport_size({'width': 1920, 'height': 1080})
         yield page
         page.close()  # Закрываем страницу после завершения теста
         context_with_https_ignore.close()  # Закрываем контекст
+    else:
+        yield None
 
 
 @pytest.fixture()

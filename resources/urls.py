@@ -7,10 +7,6 @@ external_url_base = 'https://tvlsg-dsc000006.delta.sbrf.ru/bim/api'
 url_get_me = f'https://ksup-bim.ift.delta.sbrf.ru/bim/'
 
 
-
-
-
-
 #################################################################
 #                  Account   v2/accounts                        #
 #                            v2/accounts-with-admins            #

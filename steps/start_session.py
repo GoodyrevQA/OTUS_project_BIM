@@ -1,13 +1,11 @@
 import requests
-import pytest
 import warnings
 import base64
 
 from resources import urls
 
-
-
 warnings.filterwarnings("ignore")
+
 
 def encode_to_base64(input_string):
     # Преобразуем строку в байты
