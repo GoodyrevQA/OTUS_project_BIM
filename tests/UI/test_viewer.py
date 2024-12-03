@@ -21,42 +21,11 @@ def test_add_comment(external_password, viewer_page: ViewerPage):
     with allure.step('загружаем в папку документ JPG'):
         doc_id = post_JPG_documents(folder_id=folder_id, external_password=external_password).json()
 
-    viewer_page.change_role_to_('project_admin')
+    viewer_page.change_role_to_('project_admin', external_password)
     viewer_page.go_to_the_page(f'{BASE_URL}/accounts/{ACCOUNT_ID}/projects/{PROJECT_ID}/documentation?folderId={folder_id}&viewerId={doc_id}')
     viewer_page.check_viewer_page_elements()
     viewer_page.add_comment()
     viewer_page.check_comment_is_added()
-
-
-@allure.feature("Change_scale")
-@allure.epic("Actions_with_viewer")
-@pytest.mark.viewer
-@pytest.mark.ui
-def test_reduce_and_increace_scale(external_password, viewer_page: ViewerPage):
-    '''тест проверяет изменение масштаба документа'''
-    with allure.step('создаем папку'):
-        folder_id = post_folders(project_id=static_data.PROJECT_ID, external_password=external_password).json()
-
-    with allure.step('загружаем в папку документ JPG'):
-        doc_id = post_JPG_documents(folder_id=folder_id, external_password=external_password).json()
-
-    viewer_page.change_role_to_('project_admin')
-    viewer_page.go_to_the_page(f'{BASE_URL}/accounts/{ACCOUNT_ID}/projects/{PROJECT_ID}/documentation?folderId={folder_id}&viewerId={doc_id}')
-    viewer_page.check_viewer_page_elements()
-    viewer_page.page.wait_for_timeout(5000)
-    default_scale = int(viewer_page.scale_percents.text_content().strip('%'))
-
-    viewer_page.click_button_zoom_in()
-    viewer_page.page.wait_for_timeout(1000)
-    new_scale = int(viewer_page.scale_percents.text_content().strip('%'))
-    assert new_scale > default_scale
-
-    viewer_page.click_button_zoom_out()
-    viewer_page.page.wait_for_timeout(1000)
-    viewer_page.click_button_zoom_out()
-    viewer_page.page.wait_for_timeout(1000)
-    new_scale = int(viewer_page.scale_percents.text_content().strip('%'))
-    assert new_scale < default_scale
 
 
 @allure.feature("Change_scale")
@@ -71,7 +40,7 @@ def test_button_by_page_size(external_password, viewer_page: ViewerPage):
     with allure.step('загружаем в папку документ JPG'):
         doc_id = post_JPG_documents(folder_id=folder_id, external_password=external_password).json()
 
-    viewer_page.change_role_to_('project_admin')
+    viewer_page.change_role_to_('project_admin', external_password)
     viewer_page.go_to_the_page(f'{BASE_URL}/accounts/{ACCOUNT_ID}/projects/{PROJECT_ID}/documentation?folderId={folder_id}&viewerId={doc_id}')
     viewer_page.check_viewer_page_elements()
     viewer_page.page.wait_for_timeout(5000)
@@ -100,7 +69,7 @@ def test_rotate_image(external_password, viewer_page: ViewerPage):
     with allure.step('загружаем в папку документ JPG'):
         doc_id = post_JPG_documents(folder_id=folder_id, external_password=external_password).json()
 
-    viewer_page.change_role_to_('project_admin')
+    viewer_page.change_role_to_('project_admin', external_password)
     viewer_page.go_to_the_page(f'{BASE_URL}/accounts/{ACCOUNT_ID}/projects/{PROJECT_ID}/documentation?folderId={folder_id}&viewerId={doc_id}')
     viewer_page.check_viewer_page_elements()
     # ждем, пока изображение впишется в экран

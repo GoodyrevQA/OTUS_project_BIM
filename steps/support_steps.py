@@ -150,7 +150,7 @@ def create_rectangle_image(only_name='output', width=512, height=256, indent=12,
     draw.text((text_x, text_y), only_name, fill="black", font=font)
     x, y, z = random.randint(0, 255), random.randint(0, 255), random.randint(0, 255)
     x2, y2, z2 = abs(255 - x), abs(255 - y), abs(255 - z)
-    draw.text((text_x2, text_y2), 'BIM', fill=(x, y, z), font=font_2)
+    draw.text((text_x2, text_y2), big_title, fill=(x, y, z), font=font_2)
 
     # Рисуем квадрат
     square_x0 = square_y0 = indent

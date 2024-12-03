@@ -43,7 +43,7 @@ def screenshot_on_failure(request):
 def pytest_addoption(parser: pytest.Parser):
     parser.addoption("--external-password",
                      action="store",
-                     default="random_password",
+                     default="pandom_password",
                      help="Password for authentication external_user")
 
 
