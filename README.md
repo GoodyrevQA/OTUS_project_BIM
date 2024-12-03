@@ -1,4 +1,4 @@
-# OTUS_lessons_10-20_Selenium
+# OTUS_project_BIM
 
 [![Header](https://github.com/GoodyrevQA/OTUS_auto_web_QA_2024/blob/main/assets/OTUS.jpg)](https://github.com/GoodyrevQA/OTUS_auto_web_QA_2024)
 
